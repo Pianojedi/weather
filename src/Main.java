@@ -1,22 +1,32 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.URI;
+import java.util.Scanner;
+//import org.json.simple.JSONObject;
+//import org.json.simple.parser.JSONParser;
+
+public static void main(String[] args) {
+    try {
+        Scanner in = new Scanner(System.in);
+        String city;
+        do {
+            System.out.println("===============================");
+            System.out.println("Enter City (Say No to Quit): ");
+            city = in.nextLine();
+
+            // If the user doesn't want to quit
+            if (city.equalsIgnoreCase("no")) {
+                break;
+            }
+
+            //fetch weather data
 
 
-public class Main {
+        } while (!city.equalsIgnoreCase("no"));
 
-    public static void main(String[] args) {
-
-        //Initializing call for Weather Data
-        String apiKey = "64803804e1cacf100b3754eac54e49c4";
-        String city = "Pensacola";
-        String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
-
-
-
-
-
+        System.out.println("Goodbye!");
+    } catch (Exception e) {
+        e.printStackTrace();
     }
-
 }
